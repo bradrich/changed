@@ -1,0 +1,21 @@
+// Normalize
+@import 'foundation/scss/normalize';
+
+// Settings files
+@import 'global/styles/settings';
+// injector:settings
+@import 'forms/styles/settings';
+// endinjector:settings
+
+// Vendor files
+@import 'foundation/scss/foundation';
+@import 'font-awesome/scss/font-awesome';
+@import 'compass';
+@import 'compass/support';
+
+// Styles files
+@import 'global/styles/styles';
+// injector:styles
+@import 'forms/styles/styles';
+@import 'navigation/styles/styles';
+// endinjector:styles

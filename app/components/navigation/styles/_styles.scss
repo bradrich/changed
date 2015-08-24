@@ -1,0 +1,43 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Navigation
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.nav-panel {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 90px;
+	height: 100%;
+	background: transparent;
+	.element {
+		display: inline-block;
+		width: 100%;
+		height: 90px;
+		background: $primary-color;
+		&:hover, &:focus { background: $primary-color; }
+		&.hamburger {
+			.line {
+				position: relative;
+				top: 0;
+				width: 39px;
+				height: 4px;
+				margin: rem-calc(5) rem-calc(4);
+				background: white;
+				transform-origin: center center;
+				@include transition(all 400ms ease-out);
+			}
+			&.close {
+				.line:nth-child(1) {
+					top: 9px;
+					@include rotate(45deg);
+				}
+				.line:nth-child(2) { opacity: 0; }
+				.line:nth-child(3) {
+					top: -9px;
+					@include rotate(-45deg);
+				}
+			}
+		}
+	}
+}

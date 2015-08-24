@@ -1,0 +1,30 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Browse Happy
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.browsehappy {
+	margin: 0.2em 0;
+	background: $iron;
+	color: $black;
+	padding: 0.2em 0;
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// HTML and Body
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+html { overflow-x: hidden !important; }
+body {
+	background: $primary-color url('../assets/images/background.png') no-repeat top center;
+	background-size: auto 100%;
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Buttons
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+button, .button {
+	outline: none;
+}

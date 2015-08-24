@@ -1,0 +1,36 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Forms
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Inputs
+#{text-inputs(all, 'input')} {
+	margin: 0 0 rem-calc(16) 0;
+	padding: rem-calc(16) / 2;
+	height: (rem-calc(13) + (rem-calc(16) * 1.5) - rem-calc(1));
+	font-size: rem-calc(13);
+	@include input-placeholder { color: $input-placeholder-font-color; }
+	@include transition(background 0.15s linear, border 0.15s linear, color 0.15s linear);
+}
+
+// Inputs media queries
+@media #{$medium-up} {
+	#{text-inputs(all, 'input')} {
+		margin: 0 0 $form-spacing 0;
+		padding: $form-spacing / 2;
+		height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
+		font-size: $input-font-size;
+	}
+}
+
+// Error messages
+.error {
+	input, textarea, select {
+		@include form-error-color($alert-color);
+		@include input-placeholder { color: $alert-color; }
+		&:focus { border-color: $alert-color; }
+	}
+	span.error {
+		margin-bottom: rem-calc(3) !important;
+		& > span { margin-right: rem-calc(5); }
+	}
+}

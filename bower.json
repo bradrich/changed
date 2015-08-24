@@ -1,0 +1,51 @@
+{
+  "name": "changed",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.3.0",
+    "bootstrap-sass-official": "^3.2.0",
+    "angular-animate": "~1.4.4",
+    "angular-aria": "^1.3.0",
+    "angular-cookies": "^1.3.0",
+    "angular-messages": "^1.3.0",
+    "angular-resource": "^1.3.0",
+    "angular-route": "^1.3.0",
+    "angular-sanitize": "^1.3.0",
+    "angular-touch": "^1.3.0",
+    "font-awesome": "~4.4.0",
+    "angular-local-storage": "~0.2.2",
+    "ngDialog": "~0.4.0",
+    "angular-momentjs": "~0.2.2",
+    "moment-timezone": "~0.4.0",
+    "jquery-nicescroll": "~3.6.0",
+    "angular-cache-buster": "~0.4.3",
+    "watch-once": "~2.0.0",
+    "foundation": "~5.5.2",
+    "angular-foundation": "~0.6.0",
+    "angular-bootstrap": "~0.13.3",
+    "angular-ui-utils": "~3.0.0",
+    "angular-promise-tracker": "~2.1.0",
+    "angular-loading-bar": "~0.8.0",
+    "ngFx": "~1.1.0",
+    "restangular": "~1.5.1",
+    "angular-ui-mask": "~1.4.2",
+    "angular-input-masks": "~2.0.0",
+    "es5-shim": "~4.1.10",
+    "json3": "~3.3.2",
+    "angular-ui-router": "~0.2.15"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.3.0"
+  },
+  "appPath": "app",
+  "moduleName": "changedApp",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}
