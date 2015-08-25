@@ -7,37 +7,99 @@
 	z-index: 100;
 	top: 0;
 	left: 0;
-	width: 90px;
+	width: 270px;
 	height: 100%;
 	background: transparent;
+	color: $white;
 	.element {
-		display: inline-block;
+		position: relative;
+		z-index: 120;
+		left: -270px;
+		display: block;
 		width: 100%;
-		height: 90px;
+		// height: 90px;						* Will be set by the AngularJS Directive
 		background: $primary-color;
-		&:hover, &:focus { background: $primary-color; }
-		&.hamburger {
-			.line {
-				position: relative;
-				top: 0;
-				width: 39px;
-				height: 4px;
-				margin: rem-calc(5) rem-calc(4);
-				background: white;
-				transform-origin: center center;
-				@include transition(all 400ms ease-out);
-			}
-			&.close {
-				.line:nth-child(1) {
-					top: 9px;
-					@include rotate(45deg);
+		cursor: pointer;
+		&.who-we-are { background: #82A0D4; }
+		&.our-work { background: #3C4B92; }
+		&.contact-us { background: #292E6D; }
+		&.move-right {
+			left: -180px;
+			&:hover, &:focus { left: 0; }
+		}
+		@include transition(background 300ms ease-out, left 300ms ease-out);
+		&.nav-menu-button {
+			left: 0;
+			width: 90px;
+			background: transparent;
+			&:hover, &.active { background: $alert-color-dark; }
+			.hamburger {
+				position: absolute;
+				z-index: 110;
+				// top: 45px;					* Will be set by the AngularJS Directive
+				left: 45px;
+				width: 40px;
+				margin-top: -16px;
+				margin-left: -20px;
+				.line {
+					position: relative;
+					z-index: 110;
+					top: 0;
+					width: 100%;
+					height: 4px;
+					margin: rem-calc(5) 0;
+					background: white;
+					transform-origin: center center;
+					@include transition(all 400ms ease-out);
 				}
-				.line:nth-child(2) { opacity: 0; }
-				.line:nth-child(3) {
-					top: -9px;
-					@include rotate(-45deg);
+				&.close {
+					.line:nth-child(1) {
+						top: 9px;
+						@include rotate(45deg);
+					}
+					.line:nth-child(2) { opacity: 0; }
+					.line:nth-child(3) {
+						top: -9px;
+						@include rotate(-45deg);
+					}
 				}
 			}
 		}
+		.text {
+			position: relative;
+			// top: 45px;						* Will be set by the AngularJS Directive
+			float: left;
+			display: inline;
+			width: 180px;
+			margin-top: -12px;
+			padding-left: 25px;
+		}
+		.icon {
+			position: relative;
+			float: left;
+			display: inline;
+			width: 90px;
+			i {
+				position: absolute;
+				// top: 45px;					* Will be set by the AngularJS Directive
+				left: 45px;
+				margin-top: -16px;
+				margin-left: -16px;
+				font-size: 32px !important;
+			}
+		}
 	}
+}
+.nav-main {
+	position: absolute;
+	z-index: 200;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	margin-left: -90px;
+	&.collapsed { left: -100%; }
+	&.who-we-are { background: #82A0D4; }
+	&.our-work { background: #3C4B92; }
+	&.contact-us { background: #292E6D; }
 }

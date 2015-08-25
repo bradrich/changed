@@ -61,15 +61,19 @@ $rem-base: $base-font-size;
 // c. Global
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Open Sans Font - Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
 // Font Awesome font path
-$fa-font-path: "http://netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts"; // for referencing Bootstrap CDN font files directly
+$fa-font-path: "https://netdna.bootstrapcdn.com/font-awesome/4.4.0/fonts"; // for referencing Bootstrap CDN font files directly
 
 // Default font stacks
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 
 // Default colors
 $primary-color: #E21F26;								// Super Red
 $alert-color: #E21F26;									// Super Red
+$alert-color-dark: #9C2521;								// Candy Apple
 
 // Helper colors
 $white: #ffffff;
