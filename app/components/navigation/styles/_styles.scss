@@ -11,6 +11,11 @@
 	height: 100%;
 	background: transparent;
 	color: $white;
+	@include transition(left 300ms ease-out);
+	&.move-right {
+		left: 100%;
+		margin-left: -90px;
+	}
 	.element {
 		position: relative;
 		z-index: 120;
@@ -25,8 +30,9 @@
 		&.contact-us { background: #292E6D; }
 		&.move-right {
 			left: -180px;
-			&:hover, &:focus { left: 0; }
+			// &:hover, &:focus { left: 0; }
 		}
+		&.move-right-again { left: 0; }
 		@include transition(background 300ms ease-out, left 300ms ease-out);
 		&.nav-menu-button {
 			left: 0;
@@ -98,6 +104,7 @@
 	width: 100%;
 	min-height: 100%;
 	margin-left: -90px;
+	@include transition(left 300ms ease-out);
 	&.collapsed { left: -100%; }
 	&.who-we-are { background: #82A0D4; }
 	&.our-work { background: #3C4B92; }

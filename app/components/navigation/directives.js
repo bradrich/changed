@@ -44,6 +44,23 @@ changedApp.directive('navPanel', function(){
 			// Call setChildHeight after screen resize
 			$(window).resize(function(){ setChildHeight(); });
 
+			// Loop through each child element and set its height
+			element.children().each(function(){
+
+				// Make sure that you are not working with nav-menu-button
+				if(!$(this).hasClass('nav-menu-button')){
+
+					// Handle click event
+					$(this).hover(function(){
+						if(!element.hasClass('move-right')){ $(this).addClass('move-right-again'); }
+					}, function(){
+						if(!element.hasClass('move-right')){ $(this).removeClass('move-right-again'); }
+					});
+
+				}
+
+			});
+
 		}
 	};
 });
@@ -112,8 +129,14 @@ changedApp.directive('navMain', function(){
 						else if(classList.indexOf('our-work') > -1){ clickedClass = 'our-work'; }
 						else if(classList.indexOf('contact-us') > -1){ clickedClass = 'contact-us'; }
 
-						// Add clickedClass to nav-main
-						element.toggleClass(clickedClass);
+						// Remove move-right-again from the clicked element
+						$(this).removeClass('move-right-again');
+
+						// Remove collapsed class and add clickedClass to nav-main
+						element.removeClass('collapsed').toggleClass(clickedClass);
+
+						// Add move-right class to nav-panel
+						element.closest('body').find('.nav-panel').toggleClass('move-right');
 
 					});
 
