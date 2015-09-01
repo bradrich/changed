@@ -2,6 +2,17 @@
 // Forms
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Labels
+label {
+	color: white;
+	.input-type-icon {
+		margin-left: rem-calc(10);
+		margin-right: rem-calc(10);
+		color: $alert-color;
+		font-size: 80%;
+	}
+}
+
 // Inputs
 #{text-inputs(all, 'input')} {
 	margin: 0 0 rem-calc(16) 0;
@@ -33,4 +44,31 @@
 		margin-bottom: rem-calc(3) !important;
 		& > span { margin-right: rem-calc(5); }
 	}
+}
+
+// Textarea Character Count
+.textarea-character-count {
+	position: absolute;
+	top: -3px;
+	right: 0;
+	z-index: 1000;
+	padding: rem-calc(3) rem-calc(12);
+	background: $white;
+	border: $microformat-border-style $microformat-border-width $input-border-color;
+	border-bottom-width: 0;
+	font-size: rem-calc(14);
+	@include side-radius('top', $global-radius);
+	@include transition(border-color $default-transition-duration ease-out);
+	&.no-label { margin-top: rem-calc(-30); }
+}
+.focused {
+	.textarea-character-count { border-color: $input-focus-border-color; }
+}
+.error {
+	.textarea-character-count {
+		border-color: $alert-color;
+		background: #FDEDEC;
+		@include transition(background $default-transition-duration ease-out);
+	}
+	&.focused .textarea-character-count { background: $input-focus-bg-color; }
 }

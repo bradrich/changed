@@ -2,7 +2,7 @@
 /* exported changedApp */
 
 var changedApp = angular.module('changedApp', [
-	// 'ngAnimate',
+	'ngAnimate',
 	'ngAria',
 	'ngCookies',
 	'ngSanitize',

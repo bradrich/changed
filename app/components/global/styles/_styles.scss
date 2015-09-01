@@ -11,6 +11,63 @@
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
+// Miscellaneous
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Margins
+.no-margin-bottom { margin-bottom: 0 !important; }
+.tiny-margin-bottom { margin-bottom: rem-calc(5) !important; }
+.small-margin-bottom { margin-bottom: rem-calc(10) !important; }
+.medium-margin-bottom { margin-bottom: rem-calc(25) !important; }
+.large-margin-bottom { margin-bottom: rem-calc(40) !important; }
+.xlarge-margin-bottom { margin-bottom: rem-calc(55) !important; }
+.no-margin-top { margin-top: 0 !important; }
+.tiny-margin-top { margin-top: rem-calc(5) !important; }
+.small-margin-top { margin-top: rem-calc(10) !important; }
+.medium-margin-top { margin-top: rem-calc(25) !important; }
+.large-margin-top { margin-top: rem-calc(40) !important; }
+.xlarge-margin-top { margin-top: rem-calc(55) !important; }
+.no-margin-side {
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+}
+// Radius
+.top-radius { @include side-radius(top, $global-radius); }
+.bottom-radius { @include side-radius(bottom, $global-radius); }
+// Disabled divs
+div[disabled] {
+	color: $disabled-color-mid;
+	h1, h2, h3, h4, h5, h6 { color: $disabled-color-mid; }
+	a {
+		color: $disabled-color-mid;
+		&:hover {
+			color: $white;
+			background: $disabled-color-mid;
+		}
+	}
+}
+// Miscellaneous
+.full-width { width: 100%; }
+.overflow-visible { overflow: visible !important; }
+.even, .odd {
+	padding: $column-gutter / 2 $column-gutter / 2 0 $column-gutter / 2;
+	background: $disabled-color !important;
+}
+.odd { background: $white-dark !important; }
+.super-highlight { background: $warning-color-light; }
+.inline-item {
+	margin-right: rem-calc(40);
+	white-space: nowrap;
+}
+.position-relative { position: relative; }
+.row-squeeze {
+	margin-left: $column-gutter / 2 !important;
+	margin-right: $column-gutter / 2 !important;
+}
+.clickable { cursor: pointer; }
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 // HTML and Body
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 

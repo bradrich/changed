@@ -50,7 +50,7 @@
 @import "foundation/scss/foundation/functions";
 
 // These are defined here in pixel values in order to keep compass from showing warnings in the grunt build
-$base-font-size: 16px; // Browser default
+$base-font-size: 14px; // Browser default
 $base-line-height: 24px; // Browser default
 
 // Foundation rem-base
@@ -70,14 +70,22 @@ $fa-font-path: "https://netdna.bootstrapcdn.com/font-awesome/4.4.0/fonts"; // fo
 // Default font stacks
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 
-// Default colors
-$primary-color: #E21F26;								// Super Red
-$alert-color: #E21F26;									// Super Red
-$alert-color-dark: #9C2521;								// Candy Apple
-
 // Helper colors
 $white: #ffffff;
+$white-dark: darken($white, 20%);
 $black: #000000;
+
+// Default colors
+$primary-color: #E21F26;											// Super Red
+$alert-color: #E21F26;												// Super Red
+$alert-color-dark: #9C2521;											// Candy Apple
+$warning-color: #eab545;											// Warning - Marigold
+$warning-color-light: lighten($warning-color, 30%);					// Warning Light - Highlight
+$warning-color-dark: darken($warning-color, 10%);					// Warning Dark - Mustard
+$disabled-color: #e6ecef;											// Disabled - Concrete
+$disabled-color-light: lighten($disabled-color, 5%);				// Disabled Light - Steel
+$disabled-color-mid: darken($disabled-color, 15%);					// Disabled Mid - Slate
+$disabled-color-dark: darken($disabled-color-mid, 30%);				// Disabled Dark - Stone
 
 // Border radius
 $global-radius: 4px;
@@ -88,4 +96,4 @@ $global-radius: 4px;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Paragraphs
-$paragraph-font-size: rem-calc(18);
+$paragraph-font-size: rem-calc(14);

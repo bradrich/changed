@@ -11,7 +11,7 @@
 	height: 100%;
 	background: transparent;
 	color: $white;
-	@include transition(left 300ms ease-out);
+	@include transition(left 450ms ease-out);
 	&.move-right {
 		left: 100%;
 		margin-left: -90px;
@@ -25,15 +25,13 @@
 		// height: 90px;						* Will be set by the AngularJS Directive
 		background: $primary-color;
 		cursor: pointer;
+		outline: none;
 		&.who-we-are { background: #82A0D4; }
 		&.our-work { background: #3C4B92; }
 		&.contact-us { background: #292E6D; }
-		&.move-right {
-			left: -180px;
-			// &:hover, &:focus { left: 0; }
-		}
+		&.move-right { left: -180px; }
 		&.move-right-again { left: 0; }
-		@include transition(background 300ms ease-out, left 300ms ease-out);
+		@include transition(background 450ms ease-out, left 450ms ease-out);
 		&.nav-menu-button {
 			left: 0;
 			width: 90px;
@@ -54,7 +52,7 @@
 					width: 100%;
 					height: 4px;
 					margin: rem-calc(5) 0;
-					background: white;
+					background: $white;
 					transform-origin: center center;
 					@include transition(all 400ms ease-out);
 				}
@@ -109,9 +107,46 @@
 	width: 100%;
 	min-height: 100%;
 	margin-left: -90px;
-	@include transition(left 300ms ease-out);
+	background: $alert-color-dark url('../assets/images/changed-logo-background.png') no-repeat -150% 0px;
+	@include transition(background 450ms ease-out, left 450ms ease-out);
 	&.collapsed { left: -100%; }
-	&.who-we-are { background: #82A0D4; }
-	&.our-work { background: #3C4B92; }
-	&.contact-us { background: #292E6D; }
+	&.who-we-are { background-color: #82A0D4; }
+	&.our-work { background-color: #3C4B92; }
+	&.contact-us { background-color: #292E6D; }
+	.content-container {
+		float: left;
+		width: 100%;
+		height: 100%;
+		max-height: 100%;
+		padding: 45px 45px 90px 135px;
+		.content {
+			float: left;
+			width: 100%;
+			min-height: 100%;
+			color: $white;
+			h1, h2, h3, h4, h5, h6 {
+				color: $white;
+				a { opacity: 1 !important; }
+			}
+			a {
+				color: $white;
+				opacity: .65;
+				&:hover {
+					color: $white;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+// Navigation media queries
+@media #{$medium-up} {
+	.nav-main .content-container {
+		padding: 90px 90px 180px 180px;
+		.content {
+			float: right;
+			width: 40%;
+		}
+	}
 }

@@ -3,12 +3,12 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Form spacing and positioning
-$form-spacing: rem-calc(26);
+$form-spacing: rem-calc(20);
 
 // Inputs
 $input-placeholder-font-color: #000000;
-$input-font-size: rem-calc(16);
+$input-font-size: rem-calc(14);
 $input-border-color: scale-color($white, $lightness: -20%);
 $input-focus-border-color: scale-color($white, $lightness: -20%);
-$input-border-width: 2px;
+$input-border-width: 0px;
 $input-box-shadow: none;
