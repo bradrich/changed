@@ -85,3 +85,13 @@ body {
 button, .button {
 	outline: none;
 }
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Custom Scrollbar
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.custom-scrollbar {
+	position: relative;
+	overflow-y: auto;
+}

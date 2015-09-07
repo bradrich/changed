@@ -105,48 +105,47 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	min-height: 100%;
+	height: 100%;
 	margin-left: -90px;
-	background: $alert-color-dark url('../assets/images/changed-logo-background.png') no-repeat -150% 0px;
+	background: $alert-color-dark url('../assets/images/changed-logo-background.png') no-repeat 80px 0px;
 	@include transition(background 450ms ease-out, left 450ms ease-out);
 	&.collapsed { left: -100%; }
 	&.who-we-are { background-color: #82A0D4; }
 	&.our-work { background-color: #3C4B92; }
 	&.contact-us { background-color: #292E6D; }
-	.content-container {
+	.content {
 		float: left;
 		width: 100%;
-		height: 100%;
-		max-height: 100%;
+		min-height: 100%;
 		padding: 45px 45px 90px 135px;
-		.content {
-			float: left;
-			width: 100%;
-			min-height: 100%;
+		color: $white;
+		h1, h2, h3, h4, h5, h6 {
 			color: $white;
-			h1, h2, h3, h4, h5, h6 {
+			a { opacity: 1 !important; }
+		}
+		a {
+			color: $white;
+			opacity: .65;
+			&:hover {
 				color: $white;
-				a { opacity: 1 !important; }
-			}
-			a {
-				color: $white;
-				opacity: .65;
-				&:hover {
-					color: $white;
-					opacity: 1;
-				}
+				opacity: 1;
 			}
 		}
 	}
 }
 
 // Navigation media queries
-@media #{$medium-up} {
-	.nav-main .content-container {
+@media #{$large-up} {
+	.nav-main .content {
+		float: right;
+		width: 40%;
 		padding: 90px 90px 180px 180px;
-		.content {
-			float: right;
-			width: 40%;
-		}
+	}
+}
+@media #{$medium-up} {
+	.nav-main .content {
+		float: right;
+		width: 70%;
+		padding: 90px 90px 180px 180px;
 	}
 }
