@@ -21,6 +21,7 @@ changedApp.directive('customScrollbar', function(){
 				cursorwidth: '6px',
 				cursorborder: '0px solid ' + attrs.customScrollbar,
 				cursorborderradius: '4px',
+				cursoropacitymax: .25,
 				bouncescroll: true,
 				hidecursordelay: '800',
 				railpadding: { top:0, right:6, left:0, bottom:0 }
@@ -115,7 +116,7 @@ changedApp.directive('ngThumb', function($window){
 	};
 });
 
-changedApp.directive('sectionToggle', function($parse, $timeout, $codes){
+changedApp.directive('sectionToggle', function($parse, $timeout){
 	return {
 		restrict: 'A',
 		link: function(scope, element, attrs){
@@ -189,9 +190,9 @@ changedApp.directive('sectionToggle', function($parse, $timeout, $codes){
 						}
 
 						// Get all of the codes from the links
-						if(angular.isDefined(data.links)){ $codes.parseLinks(data.links); }
-						else if(angular.isDefined(data[0].links)){ $codes.parseLinks(data[0].links); }
-						$codes.get.exec('eadv', 'codes', 'state');
+						// if(angular.isDefined(data.links)){ $codes.parseLinks(data.links); }
+						// else if(angular.isDefined(data[0].links)){ $codes.parseLinks(data[0].links); }
+						// $codes.get.exec('eadv', 'codes', 'state');
 
 						// Wait a little bit
 						$timeout(function(){
@@ -302,6 +303,23 @@ changedApp.directive('sectionToggle', function($parse, $timeout, $codes){
 				}
 
 			}
+
+		}
+	};
+});
+
+changedApp.directive('equalizerElement', function($timeout){
+	return {
+		restrict: 'A',
+		link: function(scope, element, attrs){
+
+			$timeout(function(){
+				scope.$emit('onAfterRender');
+			});
+
+			scope.$on('onAfterRender', function(){
+				console.log(element.height());
+			});
 
 		}
 	};

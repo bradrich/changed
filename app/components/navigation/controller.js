@@ -8,7 +8,10 @@ changedApp.controller('NavCtrl', function($scope, $nav){
 		// Current
 		current: null,
 
-		// Contact
+		// Our work
+		work: angular.copy($nav.work),
+
+		// Contact us
 		contact: {
 
 			// Form

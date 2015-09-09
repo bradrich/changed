@@ -1,5 +1,30 @@
 <nav class="nav-main collapsed">
 
+	<!-- Our Work -->
+	<div class="content custom-scrollbar fx-fade-up" custom-scrollbar="#ffffff" max-height="100%" ng-show="'our-work' === nav.current">
+		<div class="row">
+			<div class="medium-12 columns">
+				<p>OUR WORK</p>
+			</div>
+		</div>
+		<div class="row" equalizer>
+			<div class="medium-4 columns thumb-container clickable medium-margin-bottom" ng-repeat="item in nav.work" equalizer-element>
+				<div class="thumb-graphic">
+					<img ng-src="{{item.thumb}}" alt="{{item.client}}" />
+					<div class="thumb-overlay">&nbsp;</div>
+					<div class="thumb-icon">
+						<i class="fa icon-link fa-2x"></i>
+					</div>
+				</div>
+				<div class="thumb-header medium-margin-top text-center">
+					<p class="tiny-margin-bottom" ng-bind="item.client"></p>
+					<p><small ng-bind="item.skills"></small></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Our Work -->
+
 	<!-- Contact Us -->
 	<div class="content custom-scrollbar fx-fade-up" custom-scrollbar="#ffffff" max-height="100%" ng-show="'contact-us' === nav.current">
 		<div class="row">

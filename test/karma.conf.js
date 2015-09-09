@@ -54,6 +54,7 @@ module.exports = function(config) {
       'bower_components/angular-ui-indeterminate/dist/indeterminate.js',
       'bower_components/angular-ui-uploader/dist/uploader.js',
       'bower_components/angular-ui-utils/index.js',
+      'bower_components/angular-vertilize/angular-vertilize.js',
       'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
       'bower_components/fastclick/lib/fastclick.js',
       'bower_components/jquery.cookie/jquery.cookie.js',

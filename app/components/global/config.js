@@ -25,7 +25,8 @@ var changedApp = angular.module('changedApp', [
 	'ui.utils.masks',
 	'angular-loading-bar',
 	'ajoslin.promise-tracker',
-	'restangular'
+	'restangular',
+	'angular.vertilize'
 ])
 
 // Configure Cache Buster
