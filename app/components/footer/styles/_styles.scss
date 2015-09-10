@@ -1,0 +1,24 @@
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Footer
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.footer-container {
+	z-index: 50;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	@include transition(padding 400ms ease-out);
+	&.move-right { padding-left: 90px; }
+	.footer {
+		float: left;
+		width: 100%;
+		padding: 40px 90px 30px 90px;
+		background: rgba(226, 31, 38, .75);
+		color: $white;
+		a {
+			color: $white;
+			&:hover { color: $white; }
+		}
+	}
+}

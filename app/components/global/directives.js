@@ -21,7 +21,7 @@ changedApp.directive('customScrollbar', function(){
 				cursorwidth: '6px',
 				cursorborder: '0px solid ' + attrs.customScrollbar,
 				cursorborderradius: '4px',
-				cursoropacitymax: .25,
+				cursoropacitymax: .15,
 				bouncescroll: true,
 				hidecursordelay: '800',
 				railpadding: { top:0, right:6, left:0, bottom:0 }

@@ -8,6 +8,15 @@ changedApp.factory('$nav', function(){
 		// Elements
 		elements: ['who-we-are', 'our-work', 'contact-us'],
 
+		// Who we are
+		team: [
+			{
+				name: 'Brad Richardson',
+				role: 'Founder',
+				thumb: 'assets/images/team/brad-richardson.jpg'
+			}
+		],
+
 		// Our work
 		work: [
 			{

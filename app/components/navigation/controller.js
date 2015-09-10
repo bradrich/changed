@@ -8,6 +8,9 @@ changedApp.controller('NavCtrl', function($scope, $nav){
 		// Current
 		current: null,
 
+		// Who we are
+		team: angular.copy($nav.team),
+
 		// Our work
 		work: angular.copy($nav.work),
 

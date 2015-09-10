@@ -108,6 +108,7 @@
 	height: 100%;
 	margin-left: -90px;
 	background: $alert-color-dark url('../assets/images/changed-logo-background.png') no-repeat 80px 0px;
+	overflow: hidden;
 	@include transition(background 450ms ease-out, left 450ms ease-out);
 	&.collapsed { left: -100%; }
 	&.who-we-are { background-color: #82A0D4; }
@@ -142,6 +143,8 @@
 				img {
 					z-index: 10;
 					position: relative;
+					width: 100%;
+					height: 100%;
 				}
 				.thumb-overlay {
 					z-index: 20;
