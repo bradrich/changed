@@ -36,6 +36,7 @@
 			left: 0;
 			width: 90px;
 			background: transparent;
+			color: $white !important;
 			&:hover, &.active { background: $alert-color-dark; }
 			.hamburger {
 				position: absolute;

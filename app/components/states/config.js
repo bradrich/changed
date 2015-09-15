@@ -10,9 +10,30 @@ function ($urlRouterProvider, $stateProvider){
 
 	// State configuration that powers the router
 	$stateProvider
-		.state('main', {
-			url: '/',
-			// templateUrl: 'components/states/templates/state.html',
+		.state('home', {
+			url: ''
+		})
+		// Who We Are
+		.state('whoWeAre', {
+			url: '/who-we-are',
+			templateProvider: function($templateCache){ return $templateCache.get('modules/who-we-are/templates/who-we-are.html'); },
+			controller: 'StateCtrl'
+		})
+		.state('teamMember', {
+			url: '/who-we-are/:memberId',
+			templateProvider: function($templateCache){ return $templateCache.get('modules/who-we-are/templates/team-member.html'); },
+			controller: 'StateCtrl'
+		})
+		// Our Work
+		.state('ourWork', {
+			url: '/our-work',
+			templateProvider: function($templateCache){ return $templateCache.get('modules/our-work/templates/our-work.html'); },
+			controller: 'StateCtrl'
+		})
+		// Contact Us
+		.state('contactUs', {
+			url: '/contact-us',
+			templateProvider: function($templateCache){ return $templateCache.get('modules/contact-us/templates/contact-us.html'); },
 			controller: 'StateCtrl'
 		});
 

@@ -1,0 +1,37 @@
+<div who-we-are>
+	<div class="row">
+		<div class="medium-12 columns">
+			<h5 class="large-margin-bottom">WHO WE ARE</h5>
+		</div>
+	</div>
+	<div class="row xlarge-margin-bottom">
+		<div class="medium-6 columns">
+			<p>Changed is a multifunctional creative and application development agency, founded with the intention to not only complete work but to create success and <strong>DESIGN WITH A PURPOSE</strong>.</p>
+			<p>We love to sit down with our customers and learn about their business, become passionate about their purpose. We feel that this approach allows us to apply our creativity and talents to produce successful results.</p>
+			<p>Our work is better for it and has stories to tell. We will work to engage, inform and entice a response from your end-customers through meaningful and interesting ways.</p>
+		</div>
+		<div class="medium-6 columns">
+			<p>From website design to application development and beyond, if you have a project that you think we can help you with or an idea that you would like to discuss and see come to life, we would love to hear from you. <a ui-sref="contactUs">Contact us</a> today to get started.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-12 columns">
+			<h5 class="large-margin-bottom">MEET OUR (small but capable) TEAM</h5>
+		</div>
+	</div>
+	<div class="row" vertilize-container>
+		<div class="medium-3 columns thumb-container clickable medium-margin-bottom" ng-repeat="member in we.team" ng-class="{ end: $index === we.team.length - 1 }" ui-sref="teamMember({ memberId: member.id })">
+			<div class="thumb-graphic">
+				<img ng-src="{{member.thumb}}" alt="{{member.name}}" />
+				<div class="thumb-overlay">&nbsp;</div>
+				<div class="thumb-icon">
+					<i class="fa icon-link fa-2x"></i>
+				</div>
+			</div>
+			<div class="thumb-header medium-margin-top text-center" vertilize>
+				<p class="no-margin-bottom" ng-bind="member.name"></p>
+				<p><small ng-bind="member.role"></small></p>
+			</div>
+		</div>
+	</div>
+</div>

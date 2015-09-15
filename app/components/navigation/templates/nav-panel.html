@@ -1,5 +1,5 @@
 <div class="nav-panel">
-	<div class="element nav-menu-button">
+	<div class="element nav-menu-button" ui-sref="home">
 		<div class="hamburger">
 			<div class="line"></div>
 			<div class="line"></div>
@@ -7,15 +7,15 @@
 		</div>
 		<div class="icon ng-hide"><i class="fa icon-chevron-left"></i></div>
 	</div>
-	<div class="element who-we-are" ng-click="nav.current = 'who-we-are'">
+	<div class="element who-we-are" ui-sref="whoWeAre">
 		<div class="text">WHO WE ARE</div>
 		<div class="icon"><i class="fa icon-account-circle"></i></div>
 	</div>
-	<div class="element our-work" ng-click="nav.current = 'our-work'">
+	<div class="element our-work" ui-sref="ourWork">
 		<div class="text">OUR WORK</div>
 		<div class="icon"><i class="fa icon-favorite"></i></div>
 	</div>
-	<div class="element contact-us" ng-click="nav.current = 'contact-us'">
+	<div class="element contact-us" ui-sref="contactUs">
 		<div class="text">CONTACT US</div>
 		<div class="icon"><i class="fa icon-email"></i></div>
 	</div>

@@ -253,18 +253,6 @@ changedApp.factory('$utils', function($rootScope, localStorageService, $location
 				else{ return 'America/Los_Angeles'; }
 			}
 
-		},
-
-		// Common Data
-		commonData: {
-
-			// Get banking holidays
-			getBankHolidays: function(){
-				Restangular.all('commondata/bankholidays').getList().then(function(data){
-					$rootScope.utils.commonData.bankHolidays = angular.copy(data);
-				});
-			}
-
 		}
 
 	};

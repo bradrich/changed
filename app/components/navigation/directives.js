@@ -1,6 +1,6 @@
 'use strict';
 
-changedApp.directive('navPanel', function(){
+changedApp.directive('navPanel', function($timeout){
 	return {
 		restrict: 'E',
 		replace: true,
@@ -45,91 +45,110 @@ changedApp.directive('navPanel', function(){
 			// Call setChildHeight after screen resize
 			$(window).resize(function(){ setChildHeight(); });
 
-			// Loop through each child element and set its height
+			// Handle click event for nav-menu-button element
+			var menuClick = function(menu){
+				menu.on('click', function(){
+
+					// Is nav panel NOT moved right?
+					if(!element.hasClass('move-right')){
+
+						// Add or remove close class from nav-hamburger
+						menu.toggleClass('active').find('.hamburger').toggleClass('close');
+
+						// Timeout setting
+						var timer = 0;
+
+						// Loop through each child element of nav panel and slide over the non nav-menu-buttom element
+						element.children().each(function(index){
+
+							// Make sure that you are not working with the nav-menu-buttom
+							if(!$(this).hasClass('nav-menu-button')){
+
+								// Wait a bit
+								var el = $(this);
+								$timeout(function(){
+
+									// Slide the nav element over to the right
+									el.toggleClass('move-right');
+
+									// Wait until the last nav element to slide and also slide the footer
+									if(index === element.children().length - 1){
+										element.closest('body').find('.footer-container').toggleClass('move-right');
+									}
+
+								}, timer);
+								timer += 200;
+
+							}
+
+						});
+
+					}
+					// Is nav panel moved right?
+					else{
+
+						// Broadcast event
+						scope.$broadcast('event:state-change', 'home');
+
+					}
+
+				});
+			};
+
+			// Handle hover event for non nav-menu-button elements
+			var elementHover = function(el){
+				el.hover(function(){
+
+					// Change configuration as long as nav panel is not moved right
+					if(!element.hasClass('move-right')){ el.addClass('move-right-again'); }
+
+				}, function(){
+
+					// Change configuration as long as nav panel is not moved right
+					if(!element.hasClass('move-right')){ el.removeClass('move-right-again'); }
+
+				});
+			};
+
+			// Loop through each child element
 			element.children().each(function(){
 
-				// Make sure that you are not working with nav-menu-button
-				if(!$(this).hasClass('nav-menu-button')){
-
-					// Handle hover event
-					$(this).hover(function(){
-						if(!element.hasClass('move-right')){ $(this).addClass('move-right-again'); }
-					}, function(){
-						if(!element.hasClass('move-right')){ $(this).removeClass('move-right-again'); }
-					});
-
-				}
+				// Handle click event for nav-menu-button element
+				if($(this).hasClass('nav-menu-button')){ menuClick($(this)); }
+				// Handle hover event for non nav-menu-button elements
+				else{ elementHover($(this)); }
 
 			});
 
-		}
-	};
-});
+			// Watch the current nav element
+			scope.$watch('nav.elements.current', function(newEl, oldEl){
 
-changedApp.directive('navMenuButton', function($timeout){
-	return {
-		restrict: 'C',
-		link: function(scope, element){
+				// Showing content
+				if(newEl){
 
-			// Handle nav-hamburger click event
-			element.on('click', function(){
+					// Move the nav panel to the right
+					element.addClass('move-right');
 
-				// Only do this if nav-panel is NOT moved right
-				if(!element.closest('.nav-panel').hasClass('move-right')){
+					// Change the nav-menu-button state
+					element.find('.nav-menu-button').addClass('active').find('.hamburger').addClass('ng-hide').parent().find('.icon').removeClass('ng-hide');
 
-					// Add or remove close class from nav-hamburger element
-					element.toggleClass('active').find('.hamburger').toggleClass('close');
-
-					// Timeout setting
-					var timer = 0;
-
-					// Loop through each child element and slide over the non-nav-menu elements
-					element.closest('.nav-panel').children().each(function(index){
-
-						// Make sure that you are not working with the nav-menu-button
+					// Reconfigure navigation elements
+					element.children().each(function(){
 						if(!$(this).hasClass('nav-menu-button')){
-
-							// Wait a bit
-							var el = $(this);
-							$timeout(function(){
-
-								// Slide the element over to the right
-								el.toggleClass('move-right');
-
-								// Wait until the last element and slide the footer
-								if(index === element.closest('.nav-panel').children().length - 1){
-									element.closest('body').find('.footer-container').toggleClass('move-right');
-								}
-
-
-							}, timer);
-							timer += 200;
-
+							$(this).removeClass('move-right-again');
+							if(!$(this).hasClass('move-right')){ $(this).addClass('move-right'); }
 						}
-
 					});
 
 				}
-				// Element nav-panel IS moved right
-				else{
+				// Going home
+				else if(!newEl && newEl !== oldEl){
 
-					// Hide menu close and show hamburger
-					element.find('.hamburger').removeClass('ng-hide');
-					element.find('.icon').addClass('ng-hide');
+					// Move the nav panel back
+					element.removeClass('move-right');
 
-					// Remove move-right from nav-panel
-					element.closest('.nav-panel').removeClass('move-right');
-
-					// Set navMain
-					var navMain = element.closest('body').find('.nav-main');
-
-					// Add collapsed class to nav-main - For smooth animation
-					navMain.addClass('collapsed');
-
-					// Wait to remove all classes and add back nav-main and collapsed classes
-					$timeout(function(){
-						navMain.removeClass().addClass('nav-main collapsed');
-					}, 300);
+					// Change the nav-menu-button state
+					element.find('.nav-menu-button').find('.hamburger').removeClass('ng-hide').parent().find('.icon').addClass('ng-hide');
 
 				}
 
@@ -141,46 +160,29 @@ changedApp.directive('navMenuButton', function($timeout){
 
 changedApp.directive('navMain', function(){
 	return {
-		restrict: 'E',
+		retrict: 'A',
 		replace: true,
 		templateUrl: 'components/navigation/templates/nav.html',
 		link: function(scope, element){
 
-			// Necessities
-			var classList,
-				clickedClass,
-				navPanel = element.closest('body').find('.nav-panel');
+			// Watch the current nav element
+			scope.$watch('nav.elements.current', function(newEl, oldEl){
 
-			// Loop through all of nav-panel's children elements
-			element.closest('body').find('.nav-panel').children().each(function(){
+				// Showing content
+				if(newEl){
 
-				// Make sure that you are not working with the nav-menu-button
-				if(!$(this).hasClass('nav-menu-button')){
+					// Remove collapsed class from nav-main and add newEl class
+					element.removeClass().addClass('nav-main').addClass(newEl);
 
-					// Handle click event
-					$(this).on('click', function(){
+				}
+				// Going home
+				else if(!newEl && newEl !== oldEl){
 
-						// Remove collapsed class from nav-main
-						element.removeClass('collapsed');
-
-						// Remove move-right-again from the clicked element
-						$(this).removeClass('move-right-again');
-
-						// Add move-right class to nav-panel and change menu button from hamburger to icon
-						if(!navPanel.hasClass('move-right')){
-							navPanel.addClass('move-right');
-							navPanel.find('.nav-menu-button').find('.hamburger').addClass('ng-hide').parent().find('.icon').removeClass('ng-hide');
-						}
-
-					});
+					// Rmeove the oldEl class from nav-main and add add collapsed class
+					element.removeClass().addClass('nav-main').addClass('collapsed');
 
 				}
 
-			});
-
-			// Set clicked class
-			scope.$watch('nav.current', function(newValue){
-				if(newValue){ element.removeClass().addClass('nav-main').addClass(newValue); }
 			});
 
 		}
