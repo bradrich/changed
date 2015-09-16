@@ -11,7 +11,32 @@ changedApp.factory('$we', function(){
 				id: 'brichardson',
 				name: 'Brad Richardson',
 				role: 'Founder',
-				thumb: 'assets/images/team/brad-richardson.jpg'
+				thumb: 'assets/images/team/brad-richardson.jpg',
+				shortBioTemplate: 'modules/who-we-are/templates/brichardson-short-bio.html',
+				skills: [
+					'AngularJS',
+					'jQuery',
+					'JavaScript',
+					'Node.js',
+					'REST API',
+					'HTML5',
+					'Jade',
+					'CSS3',
+					'Sass',
+					'Responsive Design / Mobile First',
+					'SSH',
+					'BASH / ZSH',
+					'Git / GitFlow',
+					'Photoshop / Sketch / Fireworks',
+					'Illustrator',
+					'Strategy / Direction',
+					'Communication'
+				],
+				social: {
+					linkedin: 'https://www.linkedin.com/in/bradwrichardson',
+					twitter: 'https://twitter.com/bradrich48',
+					github: 'https://github.com/bradrich'
+				}
 			}
 		]
 

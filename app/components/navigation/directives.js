@@ -28,11 +28,11 @@ changedApp.directive('navPanel', function($timeout){
 					$(this).height(childHeight);
 					if($(this).hasClass('nav-menu-button')){
 						$(this).find('.hamburger').css('top', childHeightHalf);
-						$(this).find('.icon').find('i').css('top', childHeightHalf);
+						$(this).find('.fa').css('top', childHeightHalf);
 					}
 					else{
 						$(this).find('.text').css('top', childHeightHalf);
-						$(this).find('.icon').find('i').css('top', childHeightHalf);
+						$(this).find('.fa').css('top', childHeightHalf);
 					}
 
 				});
@@ -130,7 +130,7 @@ changedApp.directive('navPanel', function($timeout){
 					element.addClass('move-right');
 
 					// Change the nav-menu-button state
-					element.find('.nav-menu-button').addClass('active').find('.hamburger').addClass('ng-hide').parent().find('.icon').removeClass('ng-hide');
+					element.find('.nav-menu-button').addClass('active').find('.hamburger').addClass('close ng-hide').parent().find('.fa').removeClass('ng-hide');
 
 					// Reconfigure navigation elements
 					element.children().each(function(){
@@ -140,6 +140,9 @@ changedApp.directive('navPanel', function($timeout){
 						}
 					});
 
+					// Move footer over
+					element.closest('body').find('.footer-container').addClass('move-right');
+
 				}
 				// Going home
 				else if(!newEl && newEl !== oldEl){
@@ -148,7 +151,7 @@ changedApp.directive('navPanel', function($timeout){
 					element.removeClass('move-right');
 
 					// Change the nav-menu-button state
-					element.find('.nav-menu-button').find('.hamburger').removeClass('ng-hide').parent().find('.icon').addClass('ng-hide');
+					element.find('.nav-menu-button').find('.hamburger').removeClass('ng-hide').parent().find('.fa').addClass('ng-hide');
 
 				}
 

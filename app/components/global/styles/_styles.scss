@@ -88,10 +88,24 @@ button, .button {
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
-// Custom Scrollbar
+// Skills
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-.custom-scrollbar {
-	position: relative;
-	overflow-y: auto;
+.skill-list {
+	margin: 0;
+	li {
+		display: inline-block;
+		white-space: nowrap;
+		line-height: 3;
+		.skill-pill {
+			margin-right: 10px;
+			margin-bottom: 10px;
+			padding: 6px 10px;
+			background: lighten(#82A0D4, 3%);
+			// border: solid 1px #3C4B92;
+			// border-left: solid 4px #3C4B92;
+			// border-bottom: solid 4px #3C4B92;
+			@include border-radius($global-radius);
+		}
+	}
 }

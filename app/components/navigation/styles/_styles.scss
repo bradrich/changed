@@ -33,11 +33,63 @@
 		&.move-right-again { left: 0; }
 		@include transition(background 450ms ease-out, left 450ms ease-out);
 		&.nav-menu-button {
-			left: 0;
-			width: 90px;
+			// left: 0;
+			// width: 90px;
+			left: -180px;
 			background: transparent;
 			color: $white !important;
 			&:hover, &.active { background: $alert-color-dark; }
+			// .hamburger {
+			// 	position: absolute;
+			// 	z-index: 110;
+			// 	// top: 45px;					* Will be set by the AngularJS Directive
+			// 	left: 45px;
+			// 	width: 40px;
+			// 	margin-top: -16px;
+			// 	margin-left: -20px;
+			// 	.line {
+			// 		position: relative;
+			// 		z-index: 110;
+			// 		top: 0;
+			// 		width: 100%;
+			// 		height: 4px;
+			// 		margin: rem-calc(5) 0;
+			// 		background: $white;
+			// 		transform-origin: center center;
+			// 		@include transition(all 400ms ease-out);
+			// 	}
+			// 	&.close {
+			// 		.line:nth-child(1) {
+			// 			top: 9px;
+			// 			@include rotate(45deg);
+			// 		}
+			// 		.line:nth-child(2) { opacity: 0; }
+			// 		.line:nth-child(3) {
+			// 			top: -9px;
+			// 			@include rotate(-45deg);
+			// 		}
+			// 	}
+			// }
+			// i.icon-chevron-left {
+			// 	margin-top: -28px;
+			// 	margin-left: -28px;
+			// 	font-size: 56px !important;
+			// }
+		}
+		.text {
+			position: relative;
+			// top: 45px;						* Will be set by the AngularJS Directive
+			float: left;
+			display: inline;
+			width: 180px;
+			margin-top: -12px;
+			padding-left: 25px;
+		}
+		.icon {
+			position: relative;
+			float: left;
+			display: inline;
+			width: 90px;
 			.hamburger {
 				position: absolute;
 				z-index: 110;
@@ -69,26 +121,6 @@
 					}
 				}
 			}
-			i.icon-chevron-left {
-				margin-top: -28px;
-				margin-left: -28px;
-				font-size: 56px !important;
-			}
-		}
-		.text {
-			position: relative;
-			// top: 45px;						* Will be set by the AngularJS Directive
-			float: left;
-			display: inline;
-			width: 180px;
-			margin-top: -12px;
-			padding-left: 25px;
-		}
-		.icon {
-			position: relative;
-			float: left;
-			display: inline;
-			width: 90px;
 			i {
 				position: absolute;
 				// top: 45px;					* Will be set by the AngularJS Directive
@@ -96,6 +128,11 @@
 				margin-top: -16px;
 				margin-left: -16px;
 				font-size: 32px !important;
+				&.icon-chevron-left {
+					margin-top: -28px;
+					margin-left: -28px;
+					font-size: 56px !important;
+				}
 			}
 		}
 	}
