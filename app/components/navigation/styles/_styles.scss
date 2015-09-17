@@ -26,9 +26,9 @@
 		background: $primary-color;
 		cursor: pointer;
 		outline: none;
-		&.who-we-are { background: #82A0D4; }
-		&.our-work { background: #3C4B92; }
-		&.contact-us { background: #292E6D; }
+		&.who-we-are { background: $who-we-are-color; }
+		&.our-work { background: $our-work-color; }
+		&.contact-us { background: $contact-us-color; }
 		&.move-right { left: -180px; }
 		&.move-right-again { left: 0; }
 		@include transition(background 450ms ease-out, left 450ms ease-out);
@@ -111,9 +111,9 @@
 	overflow: hidden;
 	@include transition(background 450ms ease-out, left 450ms ease-out);
 	&.collapsed { left: -100%; }
-	&.who-we-are { background-color: #82A0D4; }
-	&.our-work { background-color: #3C4B92; }
-	&.contact-us { background-color: #292E6D; }
+	&.who-we-are { background-color: $who-we-are-color; }
+	&.our-work { background-color: $our-work-color; }
+	&.contact-us { background-color: $contact-us-color; }
 	.content {
 		float: left;
 		width: 100%;

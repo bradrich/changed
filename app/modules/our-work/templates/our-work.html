@@ -10,7 +10,7 @@
 		<div class="medium-12 columns">
 			<h4 class="medium-margin-bottom">Application Development</h4>
 		</div>
-		<div class="medium-4 columns thumb-container clickable medium-margin-bottom" ng-repeat="item in work.items | filter: { skills: 'App Development' }" ng-class="{ end: $index === work.items.length - 1 }" ui-sref="work({ workId: item.id, skill: 'App Development', index: $index })">
+		<div class="medium-4 columns thumb-container clickable medium-margin-bottom" ng-repeat="item in work.filteredItemsApp = (work.items | filter: { skills: 'App Development' })" ng-class="{ end: $index === work.filteredItemsApp.length - 1 }" ui-sref="work({ workId: item.id, skill: 'App Development', index: $index })">
 			<div class="thumb-graphic">
 				<img ng-src="{{item.thumb}}" alt="{{item.client}}" />
 				<div class="thumb-overlay">&nbsp;</div>
@@ -29,7 +29,7 @@
 		<div class="medium-12 columns">
 			<h4 class="medium-margin-bottom">Website Design</h4>
 		</div>
-		<div class="medium-4 columns thumb-container clickable medium-margin-bottom" ng-repeat="item in work.items | filter: { skills: 'Website Design' }" ng-class="{ end: $index === work.items.length - 1 }" ui-sref="work({ workId: item.id, skill: 'Website Design', index: $index })">
+		<div class="medium-4 columns thumb-container clickable medium-margin-bottom" ng-repeat="item in work.filteredItemsWeb = (work.items | filter: { skills: 'Website Design' })" ng-class="{ end: $index === work.filteredItemsWeb.length - 1 }" ui-sref="work({ workId: item.id, skill: 'Website Design', index: $index })">
 			<div class="thumb-graphic">
 				<img ng-src="{{item.thumb}}" alt="{{item.client}}" />
 				<div class="thumb-overlay">&nbsp;</div>

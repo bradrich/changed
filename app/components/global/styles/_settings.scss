@@ -87,6 +87,11 @@ $disabled-color-light: lighten($disabled-color, 5%);				// Disabled Light - Stee
 $disabled-color-mid: darken($disabled-color, 15%);					// Disabled Mid - Slate
 $disabled-color-dark: darken($disabled-color-mid, 30%);				// Disabled Dark - Stone
 
+// Page colors
+$who-we-are-color: #82A0D4;
+$our-work-color: #3C4B92;
+$contact-us-color: #292E6D;
+
 // Border radius
 $global-radius: 4px;
 

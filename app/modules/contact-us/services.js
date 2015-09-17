@@ -23,7 +23,7 @@ changedApp.factory('$contact', function(){
 				subject: { type: 'text', model: 'subject', label: 'SUBJECT', required: true, containerClass: 'medium-12' },
 				message: { type: 'textarea', model: 'message', label: 'MESSAGE', required: true, rows: 8, attributes: { 'ng-trim': false }, maxLength: '{{forms.textarea.characterMaxLength}}', characterCount: true, callback: 'forms.textarea.setCharactersLeft(contact.send.form.data.message.$viewValue)', containerClass: 'medium-12' },
 				submit: { type: 'submit', label: 'Send', class: 'secondary small', disabled: 'contact.send.form.data.$pristine && contact.send.form.data.$invalid || contact.send.form.data.$dirty && contact.send.form.data.$invalid', containerClass: 'medium-6' },
-				reset: { type: 'button', label: 'Reset', class: 'alert small', disabled: 'contact.send.form.data.$pristine', containerClass: 'medium-6' }
+				reset: { type: 'button', label: 'Reset', class: 'alert small', disabled: 'contact.send.form.data.$pristine', callback: 'contact.send.form.reset()', containerClass: 'medium-6' }
 			}
 		}
 

@@ -11,7 +11,7 @@ changedApp.factory('$we', function(){
 				id: 'brichardson',
 				name: 'Brad Richardson',
 				role: 'Founder',
-				thumb: 'assets/images/team/brad-richardson.jpg',
+				thumb: 'assets/images/team/brad-richardson.png',
 				whyChangedTemplate: 'modules/who-we-are/templates/brichardson/why-changed.html',
 				shortBioTemplate: 'modules/who-we-are/templates/brichardson/short-bio.html',
 				skills: [
@@ -40,10 +40,18 @@ changedApp.factory('$we', function(){
 				},
 				contactInfo: [
 					{
-						type: 'Email',
+						icon: 'icon-email',
 						value: 'brad@designchanged.us'
+					},
+					{
+						icon: 'icon-phone',
+						value: '(803) 792-1043'
 					}
-				]
+				],
+				resume: {
+					icon: 'icon-file-download',
+					file: 'assets/images/resume-web.pdf'
+				}
 			}
 		]
 

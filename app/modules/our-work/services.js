@@ -8,6 +8,55 @@ changedApp.factory('$work', function(){
 		// Data
 		data: [
 			{
+				id: 'aam',
+				date: 'Early 2014',
+				name: 'Mercury',
+				client: 'Advance America',
+				skills: 'Website Design, App Development',
+				thumb: 'assets/images/work/MercuryIcon.png',
+				images: [
+					'assets/images/work/MercurySignIn.png',
+					'assets/images/work/MercuryDashboard.png',
+					'assets/images/work/MercuryForm.png',
+					'assets/images/work/MercurySignInMobile.png',
+					'assets/images/work/MercuryDashboardMobile.png',
+					'assets/images/work/MercuryFormMobile.png',
+					'assets/images/work/MercuryNavMobile.png',
+				],
+				languagesTools: [
+					'AngularJS',
+					'jQuery',
+					'Bower / Grunt / NPM',
+					'Sass / CSS3',
+					'HTML5',
+					'Foundation 5',
+					'REST API / JSON',
+					'Java',
+					'Oracle SQL'
+				]
+			},
+			{
+				id: 'tm',
+				date: 'Mid 2015',
+				client: 'TabMagic',
+				skills: 'App Development, Google Chrome Extension',
+				thumb: 'assets/images/work/TabMagicIcon.png',
+				images: [
+					'assets/images/work/TabMagic1.png',
+					'assets/images/work/TabMagic2.png',
+					'assets/images/work/TabMagic3.png'
+				],
+				languagesTools: [
+					'AngularJS',
+					'jQuery',
+					'Bower / Grunt / NPM',
+					'Sass / CSS3',
+					'HTML5',
+					'Foundation 5',
+					'Google Chrome Extension API / JSON'
+				]
+			},
+			{
 				id: 'hs',
 				date: 'Early 2013',
 				client: 'HillSouth',
@@ -19,6 +68,15 @@ changedApp.factory('$work', function(){
 					'assets/images/work/HillSouthSubPage.png',
 					'assets/images/work/HillSouthNews.png',
 					'assets/images/work/HillSouthTeamMember.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery'
 				]
 			},
 			{
@@ -31,6 +89,15 @@ changedApp.factory('$work', function(){
 					'assets/images/work/BHHBHome.png',
 					'assets/images/work/BHHBSpecial.png',
 					'assets/images/work/BHHBSub.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery'
 				]
 			},
 			{
@@ -42,6 +109,15 @@ changedApp.factory('$work', function(){
 				images: [
 					'assets/images/work/TrueCentsHome.png',
 					'assets/images/work/TrueCentsSpecial.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery'
 				]
 			},
 			{
@@ -55,6 +131,15 @@ changedApp.factory('$work', function(){
 					'assets/images/work/MManorSub.png',
 					'assets/images/work/MManorSpecial.png',
 					'assets/images/work/MManorNews.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery'
 				]
 			},
 			{
@@ -68,6 +153,16 @@ changedApp.factory('$work', function(){
 					'assets/images/work/PDRTASub.png',
 					'assets/images/work/PDRTASpecial.png',
 					'assets/images/work/PDRTASpecial2.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery',
+					'Google Maps API'
 				]
 			},
 			{
@@ -80,6 +175,15 @@ changedApp.factory('$work', function(){
 					'assets/images/work/PDECHome.png',
 					'assets/images/work/PDECSub.png',
 					'assets/images/work/PDECSpecial.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery'
 				]
 			},
 			{
@@ -93,6 +197,15 @@ changedApp.factory('$work', function(){
 					'assets/images/work/SAFESub.png',
 					'assets/images/work/SAFESub2.png',
 					'assets/images/work/SAFENews.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery'
 				]
 			},
 			{
@@ -105,6 +218,15 @@ changedApp.factory('$work', function(){
 					'assets/images/work/SanteeHome.png',
 					'assets/images/work/SanteeSub.png',
 					'assets/images/work/SanteeLocations.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery'
 				]
 			},
 			{
@@ -118,6 +240,16 @@ changedApp.factory('$work', function(){
 					'assets/images/work/SCPHCALocations.png',
 					'assets/images/work/SCPHCANews.png',
 					'assets/images/work/SCPHCATestimonials.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery',
+					'Google Maps API'
 				]
 			},
 			{
@@ -129,6 +261,15 @@ changedApp.factory('$work', function(){
 				images: [
 					'assets/images/work/UNLIKEABANKHome.png',
 					'assets/images/work/UNLIKEABANKSub.png'
+				],
+				languagesTools: [
+					'Umbraco CMS / ASP.Net',
+					'C#',
+					'Microsoft SQL',
+					'CSS3',
+					'HTML5',
+					'XML / XSLT / Razor',
+					'jQuery'
 				]
 			}
 		]

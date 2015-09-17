@@ -23,13 +23,22 @@
 	</div>
 	<div class="row">
 		<div class="medium-9 columns">
-			<img class="medium-margin-bottom" ng-repeat="image in work.current.images" ng-src="{{image}}" />
+			<img class="medium-margin-bottom medium-margin-right" ng-repeat="image in work.current.images" ng-src="{{image}}" />
 		</div>
 		<div class="medium-3 columns">
+			<p ng-show="work.current.name">NAME<br /><strong ng-bind="work.current.name"></strong></p>
 			<p ng-show="work.current.date">DATE<br /><strong ng-bind="work.current.date"></strong></p>
 			<p ng-show="work.current.client">CLIENT<br /><strong ng-bind="work.current.client"></strong></p>
 			<p ng-show="work.current.skills">SKILLS<br /><strong ng-bind="work.current.skills"></strong></p>
 			<p ng-show="work.current.liveView">URL<br /><a ng-href="{{work.current.liveView}}" target="_blank" ng-bind="work.current.liveView"></a></p>
+			<p class="no-margin-bottom" ng-show="work.current.languagesTools">LANGUAGES / TOOLS</p>
+			<ul class="skill-list">
+				<li ng-repeat="lang in work.current.languagesTools">
+					<div>
+						<span class="skill-pill our-work" ng-bind="lang"></span>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
 </div>

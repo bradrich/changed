@@ -23,23 +23,23 @@
 			<ul class="skill-list">
 				<li ng-show="we.current.social.linkedin">
 					<div>
-						<a class="skill-pill" ng-href="{{we.current.social.linkedin}}" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
+						<a class="skill-pill who-we-are" ng-href="{{we.current.social.linkedin}}" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
 					</div>
 				</li>
 				<li ng-show="we.current.social.twitter">
 					<div>
-						<a class="skill-pill" ng-href="{{we.current.social.twitter}}" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
+						<a class="skill-pill who-we-are" ng-href="{{we.current.social.twitter}}" target="_blank"><i class="fa fa-twitter fa-lg"></i></a>
 					</div>
 				</li>
 				<li ng-show="we.current.social.github">
 					<div>
-						<a class="skill-pill" ng-href="{{we.current.social.github}}" target="_blank"><i class="fa fa-github fa-lg"></i></a>
+						<a class="skill-pill who-we-are" ng-href="{{we.current.social.github}}" target="_blank"><i class="fa fa-github fa-lg"></i></a>
 					</div>
 				</li>
 			</ul>
 		</div>
 		<div class="medium-4 columns">
-			<img src="assets/images/team/brad-richardson.jpg" alt="Brad Richardson" align="right" width="200" />
+			<img ng-src="{{we.current.thumb}}" alt="{{we.current.name}}" align="right" width="200" />
 		</div>
 	</div>
 	<div class="row">
@@ -63,7 +63,7 @@
 					<ul class="skill-list">
 						<li ng-repeat="skill in we.current.skills">
 							<div>
-								<span class="skill-pill" ng-bind="skill"></span>
+								<span class="skill-pill who-we-are" ng-bind="skill"></span>
 							</div>
 						</li>
 					</ul>
@@ -77,15 +77,18 @@
 				<div class="medium-12 columns special-content who-we-are">
 					<h5>Contact Info</h5>
 					<div class="row" ng-repeat="item in we.current.contactInfo">
-						<div class="medium-3 columns" ng-bind="item.type"></div>
-						<div class="medium-9 columns" ng-bind="item.value"></div>
+						<div class="medium-2 columns"><i class="fa fa-lg" ng-class="item.icon"></i></div>
+						<div class="medium-10 columns"><a ng-href="{{item.value}}" target="_blank" ng-bind="item.value"></a></div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="medium-12 columns special-content who-we-are">
 					<h5>Download Résumé</h5>
-
+					<div class="row">
+						<div class="medium-2 columns"><i class="fa fa-lg" ng-class="we.current.resume.icon"></i></div>
+						<div class="medium-10 columns"><a ng-href="{{we.current.resume.file}}" target="_blank">Brad Richardson - Résumé</a></div>
+					</div>
 				</div>
 			</div>
 

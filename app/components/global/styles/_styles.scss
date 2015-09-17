@@ -15,18 +15,30 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Margins
-.no-margin-bottom { margin-bottom: 0 !important; }
-.tiny-margin-bottom { margin-bottom: rem-calc(5) !important; }
-.small-margin-bottom { margin-bottom: rem-calc(10) !important; }
-.medium-margin-bottom { margin-bottom: rem-calc(25) !important; }
-.large-margin-bottom { margin-bottom: rem-calc(40) !important; }
-.xlarge-margin-bottom { margin-bottom: rem-calc(55) !important; }
 .no-margin-top { margin-top: 0 !important; }
 .tiny-margin-top { margin-top: rem-calc(5) !important; }
 .small-margin-top { margin-top: rem-calc(10) !important; }
 .medium-margin-top { margin-top: rem-calc(25) !important; }
 .large-margin-top { margin-top: rem-calc(40) !important; }
 .xlarge-margin-top { margin-top: rem-calc(55) !important; }
+.no-margin-right { margin-right: 0 !important; }
+.tiny-margin-right { margin-right: rem-calc(5) !important; }
+.small-margin-right { margin-right: rem-calc(10) !important; }
+.medium-margin-right { margin-right: rem-calc(25) !important; }
+.large-margin-right { margin-right: rem-calc(40) !important; }
+.xlarge-margin-right { margin-right: rem-calc(55) !important; }
+.no-margin-bottom { margin-bottom: 0 !important; }
+.tiny-margin-bottom { margin-bottom: rem-calc(5) !important; }
+.small-margin-bottom { margin-bottom: rem-calc(10) !important; }
+.medium-margin-bottom { margin-bottom: rem-calc(25) !important; }
+.large-margin-bottom { margin-bottom: rem-calc(40) !important; }
+.xlarge-margin-bottom { margin-bottom: rem-calc(55) !important; }
+.no-margin-left { margin-left: 0 !important; }
+.tiny-margin-left { margin-left: rem-calc(5) !important; }
+.small-margin-left { margin-left: rem-calc(10) !important; }
+.medium-margin-left { margin-left: rem-calc(25) !important; }
+.large-margin-left { margin-left: rem-calc(40) !important; }
+.xlarge-margin-left { margin-left: rem-calc(55) !important; }
 .no-margin-side {
 	margin-right: 0 !important;
 	margin-left: 0 !important;
@@ -94,7 +106,7 @@ button, .button {
 .special-icon {
 	padding: rem-calc(20);
 	@include border-radius($global-rounded);
-	&.contact-us { background: lighten(#292E6D, 5%); }
+	&.contact-us { background: lighten($contact-us-color, 5%); }
 	&.success { background: green; }
 	&.alert {
 		padding: rem-calc(20) rem-calc(26);
@@ -127,8 +139,9 @@ button, .button {
 			margin-right: rem-calc(10);
 			margin-bottom: rem-calc(10);
 			padding: rem-calc(6) rem-calc(10);
-			background: lighten(#82A0D4, 3%);
 			@include border-radius($global-radius);
+			&.who-we-are { background: lighten($who-we-are-color, 3%); }
+			&.our-work { background: lighten($our-work-color, 3%); }
 		}
 	}
 }
@@ -196,18 +209,18 @@ button, .button {
 		}
 	}
 	span { cursor: default; }
-	&.our-work {
-		background: lighten(#3C4B92, 3%);
+	&.who-we-are {
+		background: lighten($who-we-are-color, 3%);
 		.fa {
-			color: lighten(#3C4B92, 25%);
-			&:hover { color: lighten(#3C4B92, 50%); }
+			color: lighten($who-we-are-color, 25%);
+			&:hover { color: lighten($who-we-are-color, 50%); }
 		}
 	}
-	&.who-we-are {
-		background: lighten(#82A0D4, 3%);
+	&.our-work {
+		background: lighten($our-work-color, 3%);
 		.fa {
-			color: lighten(#82A0D4, 25%);
-			&:hover { color: lighten(#82A0D4, 50%); }
+			color: lighten($our-work-color, 25%);
+			&:hover { color: lighten($our-work-color, 50%); }
 		}
 	}
 }
@@ -220,6 +233,6 @@ button, .button {
 .special-content {
 	padding: rem-calc(14) rem-calc(20) rem-calc(10) rem-calc(20);
 	@include border-radius($global-radius);
-	&.our-work { background: lighten(#3C4B92, 3%); }
-	&.who-we-are { background: lighten(#82A0D4, 3%); }
+	&.who-we-are { background: lighten($who-we-are-color, 3%); }
+	&.our-work { background: lighten($our-work-color, 3%); }
 }

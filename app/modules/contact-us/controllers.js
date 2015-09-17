@@ -35,6 +35,12 @@ changedApp.controller('ContactUsCtrl', function($scope, $contact, $email){
 				// Initialize
 				init: function(){
 					$scope.contact.send.form.model = angular.copy($contact.form.object);
+				},
+
+				// Reset
+				reset: function(){
+					$scope.contact.send.form.init();
+					$scope.contact.send.form.data.$setPristine();
 				}
 
 			},
