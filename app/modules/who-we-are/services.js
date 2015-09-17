@@ -50,7 +50,7 @@ changedApp.factory('$we', function(){
 				],
 				resume: {
 					icon: 'icon-file-download',
-					file: 'assets/images/resume-web.pdf'
+					file: './assets/images/resume-web.pdf'
 				}
 			}
 		]

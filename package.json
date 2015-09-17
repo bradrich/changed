@@ -6,9 +6,16 @@
   "author": {
     "name": "Brad Richardson"
   },
+  "developers": [
+    {
+      "name": "Brad Richardson",
+      "email": "brad@designchanged.us",
+      "role": "Founder"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/bradrich/changed"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

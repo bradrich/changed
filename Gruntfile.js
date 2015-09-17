@@ -431,6 +431,7 @@ module.exports = function (grunt) {
 						'.htaccess',
 						'*.html',
 						'assets/images/{,*/}*.{png,jpg,jpeg,gif,svg,webp}',
+						'assets/images/{,*/}*.pdf',
 						'assets/fonts/{,*/}*.*'
 					]
 				}, {
@@ -469,6 +470,16 @@ module.exports = function (grunt) {
 			unit: {
 				configFile: 'test/karma.conf.js',
 				singleRun: true
+			}
+		},
+
+		// README.md generator
+		readme: {
+			options: {
+				sep: '\n',
+				src: ['docs/templates/README.tmpl.md'],
+				dest: './',
+				templates: 'docs/templates'
 			}
 		}
 
