@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div class="row" vertilize-container>
-		<div class="medium-3 columns thumb-container clickable medium-margin-bottom" ng-repeat="member in we.team" ng-class="{ end: $index === we.team.length - 1 }" ui-sref="teamMember({ memberId: member.id })">
+		<div class="medium-3 columns thumb-container clickable medium-margin-bottom" ng-repeat="member in we.team" ng-class="{ end: $index === we.team.length - 1 }" ui-sref="teamMember({ memberId: member.id, index: $index })">
 			<div class="thumb-graphic">
 				<img ng-src="{{member.thumb}}" alt="{{member.name}}" />
 				<div class="thumb-overlay">&nbsp;</div>

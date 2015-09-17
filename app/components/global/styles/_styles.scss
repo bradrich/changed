@@ -88,6 +88,32 @@ button, .button {
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
+// Icons
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.special-icon {
+	padding: rem-calc(20);
+	@include border-radius($global-rounded);
+	&.contact-us { background: lighten(#292E6D, 5%); }
+	&.success { background: green; }
+	&.alert {
+		padding: rem-calc(20) rem-calc(26);
+		background: $primary-color;
+	}
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Images
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.content-image-right {
+	margin-bottom: rem-calc(20);
+	margin-left: rem-calc(50);
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
 // Skills
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -98,14 +124,102 @@ button, .button {
 		white-space: nowrap;
 		line-height: 3;
 		.skill-pill {
-			margin-right: 10px;
-			margin-bottom: 10px;
-			padding: 6px 10px;
+			margin-right: rem-calc(10);
+			margin-bottom: rem-calc(10);
+			padding: rem-calc(6) rem-calc(10);
 			background: lighten(#82A0D4, 3%);
-			// border: solid 1px #3C4B92;
-			// border-left: solid 4px #3C4B92;
-			// border-bottom: solid 4px #3C4B92;
 			@include border-radius($global-radius);
 		}
 	}
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Image gallery - Thumbs
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.thumb-container {
+	&:hover {
+		.thumb-graphic .thumb-overlay { opacity: .75; }
+		.thumb-graphic .thumb-icon { opacity: 1; }
+	}
+	.thumb-graphic {
+		position: relative;
+		img {
+			z-index: 10;
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+		.thumb-overlay {
+			z-index: 20;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: $primary-color;
+			opacity: 0;
+			@include transition(opacity 300ms ease-out);
+		}
+		.thumb-icon {
+			z-index: 30;
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			width: 40px;
+			height: 40px;
+			padding: 6px 0 0 6px;
+			background: black;
+			opacity: 0;
+			@include border-radius(1000px);
+			@include transition(opacity 300ms ease-out);
+		}
+	}
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Pagination
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.pagination {
+	padding: rem-calc(14) rem-calc(10) rem-calc(6) rem-calc(10);
+	@include border-radius($global-radius);
+	.fa {
+		cursor: pointer;
+		font-size: rem-calc(20);
+		@include transition(color 450ms ease-out);
+		&.fa-times-circle-o {
+			margin-top: rem-calc(-1);
+			font-size: rem-calc(25);
+		}
+	}
+	span { cursor: default; }
+	&.our-work {
+		background: lighten(#3C4B92, 3%);
+		.fa {
+			color: lighten(#3C4B92, 25%);
+			&:hover { color: lighten(#3C4B92, 50%); }
+		}
+	}
+	&.who-we-are {
+		background: lighten(#82A0D4, 3%);
+		.fa {
+			color: lighten(#82A0D4, 25%);
+			&:hover { color: lighten(#82A0D4, 50%); }
+		}
+	}
+}
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+// Special content
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.special-content {
+	padding: rem-calc(14) rem-calc(20) rem-calc(10) rem-calc(20);
+	@include border-radius($global-radius);
+	&.our-work { background: lighten(#3C4B92, 3%); }
+	&.who-we-are { background: lighten(#82A0D4, 3%); }
 }

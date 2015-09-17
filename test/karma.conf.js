@@ -37,6 +37,7 @@ module.exports = function(config) {
       'bower_components/angular-input-masks/angular-input-masks-standalone.min.js',
       'bower_components/angular-loading-bar/build/loading-bar.js',
       'bower_components/angular-local-storage/dist/angular-local-storage.js',
+      'bower_components/angular-material/angular-material.js',
       'bower_components/angular-messages/angular-messages.js',
       'bower_components/moment/moment.js',
       'bower_components/angular-momentjs/angular-momentjs.js',

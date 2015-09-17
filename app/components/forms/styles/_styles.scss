@@ -36,12 +36,16 @@ label {
 // Error messages
 .error {
 	input, textarea, select {
+		margin-bottom: 0 !important;
 		@include form-error-color($alert-color);
 		@include input-placeholder { color: $alert-color; }
+		@include side-radius('top', $global-radius !important);
+		@include side-radius('bottom', 0 !important);
 		&:focus { border-color: $alert-color; }
 	}
 	span.error {
-		margin-bottom: rem-calc(3) !important;
+		margin-bottom: rem-calc(16) !important;
+		@include side-radius('bottom', $global-radius !important);
 		& > span { margin-right: rem-calc(5); }
 	}
 }
@@ -52,11 +56,10 @@ label {
 	top: -3px;
 	right: 0;
 	z-index: 1000;
-	padding: rem-calc(3) rem-calc(12);
+	padding: rem-calc(3) rem-calc(12) rem-calc(8) rem-calc(12);
 	background: $white;
-	border: $microformat-border-style $microformat-border-width $input-border-color;
-	border-bottom-width: 0;
-	font-size: rem-calc(14);
+	font-size: rem-calc(12);
+	color: $input-font-color;
 	@include side-radius('top', $global-radius);
 	@include transition(border-color $default-transition-duration ease-out);
 	&.no-label { margin-top: rem-calc(-30); }
@@ -66,8 +69,8 @@ label {
 }
 .error {
 	.textarea-character-count {
-		border-color: $alert-color;
 		background: #FDEDEC;
+		color: $alert-color;
 		@include transition(background $default-transition-duration ease-out);
 	}
 	&.focused .textarea-character-count { background: $input-focus-bg-color; }

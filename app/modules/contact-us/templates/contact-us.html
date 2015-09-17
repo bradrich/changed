@@ -12,8 +12,29 @@
 			<p>ACCOUNTS INQUIRIES<br /><a href="mailto:info@designchanged.us">accounts@designchanged.us</a></p>
 		</div>
 		<div class="medium-6 columns">
-			<h4 class="medium-margin-bottom"><i class="fa icon-devices fa-lg"></i>&nbsp;&nbsp;&nbsp;Send Us a Message.</h4>
-			<dynamic-form class="row" name="contact.form.data" ng-model="contact.form.model" template="contact.form.template" novalidate ng-submit="contact.send.exec()"></dynamic-form>
+			<div class="fx-fade-up" ng-show="contact.send.ui.showForm">
+				<h4 class="medium-margin-bottom"><i class="fa icon-devices fa-lg"></i>&nbsp;&nbsp;&nbsp;Send Us a Message.</h4>
+				<dynamic-form class="row" name="contact.send.form.data" ng-model="contact.send.form.model" template="contact.send.form.template" novalidate ng-submit="contact.send.sendToChanged.exec()"></dynamic-form>
+			</div>
+			<div class="fx-fade-up" ng-show="contact.send.ui.showSending">
+				<h4 class="medium-margin-bottom"><i class="fa icon-devices fa-lg"></i>&nbsp;&nbsp;&nbsp;Sending Your Message.</h4>
+				<div class="text-center">
+					<i class="fa fa-circle-o-notch fa-spin fa-4x special-icon contact-us"></i>
+				</div>
+			</div>
+			<div class="fx-fade-up" ng-show="contact.send.ui.showSent">
+				<h4 class="medium-margin-bottom"><i class="fa icon-devices fa-lg"></i>&nbsp;&nbsp;&nbsp;Your Message Has Been Sent.</h4>
+				<div class="text-center">
+					<i class="fa fa-check fa-4x special-icon success"></i>
+				</div>
+			</div>
+			<div class="fx-fade-up" ng-show="contact.send.ui.showError">
+				<h4 class="medium-margin-bottom"><i class="fa icon-devices fa-lg"></i>&nbsp;&nbsp;&nbsp;Error!</h4>
+				<div class="text-center">
+					<i class="fa fa-times fa-4x special-icon alert large-margin-bottom"></i>
+					<p>There was an error while attempting to send us your message. However, you should have been able to send us an email through your default email application.</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

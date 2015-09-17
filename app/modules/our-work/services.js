@@ -8,10 +8,10 @@ changedApp.factory('$work', function(){
 		// Data
 		data: [
 			{
+				id: 'hs',
 				date: 'Early 2013',
 				client: 'HillSouth',
 				skills: 'Website Design',
-				liveView: 'http://hillsouth.com',
 				thumb: 'assets/images/work/HillSouthIcon.png',
 				images: [
 					'assets/images/work/HillSouthHome.png',
@@ -22,6 +22,7 @@ changedApp.factory('$work', function(){
 				]
 			},
 			{
+				id: 'bhhb',
 				date: 'Mid 2007',
 				client: 'Billie Hardee Home for Boys',
 				skills: 'Website Design',
@@ -33,10 +34,10 @@ changedApp.factory('$work', function(){
 				]
 			},
 			{
+				id: 'hffcu',
 				date: 'Mid 2011',
 				client: 'Health Facilities Federal Credit Union',
 				skills: 'Website Design',
-				liveView: 'http://cutruecents.com',
 				thumb: 'assets/images/work/TrueCentsIcon.png',
 				images: [
 					'assets/images/work/TrueCentsHome.png',
@@ -44,10 +45,10 @@ changedApp.factory('$work', function(){
 				]
 			},
 			{
+				id: 'mm',
 				date: 'Early 2011',
 				client: 'Methodist Manor',
 				skills: 'Website Design',
-				liveView: 'http://methodist-manor.com',
 				thumb: 'assets/images/work/MManorIcon.png',
 				images: [
 					'assets/images/work/MManorHome.png',
@@ -57,10 +58,10 @@ changedApp.factory('$work', function(){
 				]
 			},
 			{
+				id: 'pdrta',
 				date: 'Mid 2009',
 				client: 'Pee Dee Regional Transportation Authority',
 				skills: 'App Development, Website Design',
-				liveView: 'http://pdrta.org',
 				thumb: 'assets/images/work/PDRTAIcon.png',
 				images: [
 					'assets/images/work/PDRTAHome.png',
@@ -70,10 +71,10 @@ changedApp.factory('$work', function(){
 				]
 			},
 			{
+				id: 'pdec',
 				date: 'Early 2010',
 				client: 'Pee Dee Electric Cooperative',
 				skills: 'Website Design',
-				liveView: 'http://peedeeelectric.com',
 				thumb: 'assets/images/work/PDECIcon.png',
 				images: [
 					'assets/images/work/PDECHome.png',
@@ -82,22 +83,23 @@ changedApp.factory('$work', function(){
 				]
 			},
 			{
+				id: 'safefcu',
 				date: 'Mid 2010',
 				client: 'SAFE Federal Credit Union',
 				skills: 'Website Design',
 				thumb: 'assets/images/work/SAFEIcon.png',
 				images: [
-					'assets/images/work/SAFEHome.png',
+					'assets/images/work/SAFEHome.jpg',
 					'assets/images/work/SAFESub.png',
 					'assets/images/work/SAFESub2.png',
 					'assets/images/work/SAFENews.png'
 				]
 			},
 			{
+				id: 'sec',
 				date: 'Late 2010',
 				client: 'Santee Electric Cooperative',
 				skills: 'Website Design',
-				liveView: 'http://www.santee.org',
 				thumb: 'assets/images/work/SanteeIcon.png',
 				images: [
 					'assets/images/work/SanteeHome.png',
@@ -106,10 +108,10 @@ changedApp.factory('$work', function(){
 				]
 			},
 			{
+				id: 'scphca',
 				date: 'Early 2012',
 				client: 'South Carolina Primary Health Care Association',
 				skills: 'App Development, Website Design',
-				liveView: 'http://scphca.org',
 				thumb: 'assets/images/work/SCPHCAIcon.png',
 				images: [
 					'assets/images/work/SCPHCAHome.png',
@@ -119,6 +121,7 @@ changedApp.factory('$work', function(){
 				]
 			},
 			{
+				id: 'uab',
 				date: 'Early 2011',
 				client: 'SAFE Federal Credit Union',
 				skills: 'Website Design',

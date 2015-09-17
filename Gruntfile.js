@@ -159,7 +159,8 @@ module.exports = function (grunt) {
 					/json3/,
 					/es5-shim/,
 					/font-awesome.css/,
-					/foundation.css/
+					/foundation.css/,
+					/angular-material.css/
 				]
 			},
 			test: {

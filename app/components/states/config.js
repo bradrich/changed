@@ -20,7 +20,7 @@ function ($urlRouterProvider, $stateProvider){
 			controller: 'StateCtrl'
 		})
 		.state('teamMember', {
-			url: '/who-we-are/:memberId',
+			url: '/who-we-are/:memberId?index',
 			templateProvider: function($templateCache){ return $templateCache.get('modules/who-we-are/templates/team-member.html'); },
 			controller: 'StateCtrl'
 		})
@@ -28,6 +28,11 @@ function ($urlRouterProvider, $stateProvider){
 		.state('ourWork', {
 			url: '/our-work',
 			templateProvider: function($templateCache){ return $templateCache.get('modules/our-work/templates/our-work.html'); },
+			controller: 'StateCtrl'
+		})
+		.state('work', {
+			url: '/our-work/:workId?skill&index',
+			templateProvider: function($templateCache){ return $templateCache.get('modules/our-work/templates/work.html'); },
 			controller: 'StateCtrl'
 		})
 		// Contact Us

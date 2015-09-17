@@ -14,7 +14,8 @@ changedApp.factory('$nav', function(){
 			},
 			{
 				name: 'our-work',
-				state: 'ourWork'
+				state: 'ourWork',
+				subs: [ 'work' ]
 			},
 			{
 				name: 'contact-us',

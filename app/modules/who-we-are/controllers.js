@@ -1,21 +1,9 @@
 'use strict';
 
-changedApp.controller('WhoWeAreCtrl', function($scope, $we){
+changedApp.controller('WhoWeAreCtrl', function($scope, $we, $stateParams){
 
 	// Define we
 	$scope.we = {
-
-		// Team
-		team: angular.copy($we.team)
-
-	};
-
-});
-
-changedApp.controller('TeamMemberCtrl', function($scope, $we, $stateParams){
-
-	// Define team member
-	$scope.teamMember = {
 
 		// Initialize
 		init: function(){
@@ -27,7 +15,9 @@ changedApp.controller('TeamMemberCtrl', function($scope, $we, $stateParams){
 					// Loop through all team members
 					angular.forEach($we.team, function(member){
 						if(member.id === $stateParams.memberId){
-							$scope.teamMember.current = member;
+							$scope.we.current = member;
+							$scope.we.current.pagination = {};
+							$scope.we.current.pagination.index = parseInt($stateParams.index);
 						}
 					});
 
@@ -36,12 +26,15 @@ changedApp.controller('TeamMemberCtrl', function($scope, $we, $stateParams){
 
 		},
 
-		// Current
+		// Team members
+		team: angular.copy($we.team),
+
+		// Current selected member
 		current: null
 
 	};
 
-	// Initialize team member
-	$scope.teamMember.init();
+	// Initialize we
+	$scope.we.init();
 
 });

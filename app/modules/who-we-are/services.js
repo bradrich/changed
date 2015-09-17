@@ -12,7 +12,8 @@ changedApp.factory('$we', function(){
 				name: 'Brad Richardson',
 				role: 'Founder',
 				thumb: 'assets/images/team/brad-richardson.jpg',
-				shortBioTemplate: 'modules/who-we-are/templates/brichardson-short-bio.html',
+				whyChangedTemplate: 'modules/who-we-are/templates/brichardson/why-changed.html',
+				shortBioTemplate: 'modules/who-we-are/templates/brichardson/short-bio.html',
 				skills: [
 					'AngularJS',
 					'jQuery',
@@ -36,7 +37,13 @@ changedApp.factory('$we', function(){
 					linkedin: 'https://www.linkedin.com/in/bradwrichardson',
 					twitter: 'https://twitter.com/bradrich48',
 					github: 'https://github.com/bradrich'
-				}
+				},
+				contactInfo: [
+					{
+						type: 'Email',
+						value: 'brad@designchanged.us'
+					}
+				]
 			}
 		]
 

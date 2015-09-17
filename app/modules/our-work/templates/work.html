@@ -1,0 +1,35 @@
+<div class="content" our-work>
+	<div class="row large-margin-bottom">
+		<div class="medium-12 columns">
+			<div class="row no-margin-side pagination our-work">
+				<div class="medium-2 columns">
+					<i class="fa fa-chevron-left" ng-show="work.current.pagination.index !== 0" ui-sref="work({ workId: work.items[work.current.pagination.index - 1].id, skill: work.current.pagination.skill, index: work.current.pagination.index - 1 })"></i>
+					<span ng-show="work.current.pagination.index === 0">&nbsp;</span>
+				</div>
+				<div class="medium-8 columns text-center">
+					<i class="fa fa-times-circle-o" ui-sref="ourWork"></i>
+				</div>
+				<div class="medium-2 columns text-right">
+					<i class="fa fa-chevron-right" ng-show="work.current.pagination.index !== work.items.length - 1" ui-sref="work({ workId: work.items[work.current.pagination.index + 1].id, skill: work.current.pagination.skill, index: work.current.pagination.index + 1 })"></i>
+					<span ng-show="work.current.pagination.index === work.items.length - 1">&nbsp;</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-12 columns">
+			<h5 class="large-margin-bottom" ng-bind="work.current.client.toUpperCase()"></h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="medium-9 columns">
+			<img class="medium-margin-bottom" ng-repeat="image in work.current.images" ng-src="{{image}}" />
+		</div>
+		<div class="medium-3 columns">
+			<p ng-show="work.current.date">DATE<br /><strong ng-bind="work.current.date"></strong></p>
+			<p ng-show="work.current.client">CLIENT<br /><strong ng-bind="work.current.client"></strong></p>
+			<p ng-show="work.current.skills">SKILLS<br /><strong ng-bind="work.current.skills"></strong></p>
+			<p ng-show="work.current.liveView">URL<br /><a ng-href="{{work.current.liveView}}" target="_blank" ng-bind="work.current.liveView"></a></p>
+		</div>
+	</div>
+</div>

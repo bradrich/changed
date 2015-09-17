@@ -6,10 +6,3 @@ changedApp.directive('whoWeAre', function(){
 		controller: 'WhoWeAreCtrl'
 	};
 });
-
-changedApp.directive('teamMember', function(){
-	return {
-		restrict: 'A',
-		controller: 'TeamMemberCtrl'
-	};
-});
