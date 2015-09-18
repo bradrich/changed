@@ -26,12 +26,13 @@ var changedApp = angular.module('changedApp', [
 	'angular-loading-bar',
 	'ajoslin.promise-tracker',
 	'restangular',
-	'angular.vertilize'
+	'angular.vertilize',
+	'base64'
 ])
 
 // Configure Cache Buster
 .config(function(httpRequestInterceptorCacheBusterProvider){
-	httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*template.*/,/.*bower.*/,/.*css.*/,/.*images.*/,/.*modules.*/,/.*components.*/]);
+	httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*template.*/,/.*bower.*/,/.*css.*/,/.*images.*/,/.*modules.*/,/.*components.*/,/.*twitter.*/]);
 })
 
 // Configure IE fix for form handling

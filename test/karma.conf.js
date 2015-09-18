@@ -28,6 +28,7 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-aria/angular-aria.js',
+      'bower_components/angular-base64/angular-base64.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-cache-buster/angular-cache-buster.js',
       'bower_components/angular-cookies/angular-cookies.js',
