@@ -165,19 +165,23 @@ module.exports = function (grunt) {
 			},
 			test: {
 				devDependencies: true,
-				src: '<%= karma.unit.configFile %>',
+				src: 'test/karma-shared-conf.js',
 				ignorePath:  /\.\.\//,
 				fileTypes:{
 					js: {
 						block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
-							detect: {
-								js: /'(.*\.js)'/gi
-							},
-							replace: {
-								js: '\'{{filePath}}\','
-							}
+						detect: {
+							js: /'(.*\.js)'/gi
+						},
+						replace: {
+							js: '\'{{filePath}}\','
 						}
 					}
+				},
+				exclude: [
+					/modernizr/,
+					/es5-shim/
+				]
 			},
 			sass: {
 				src: ['<%= yeoman.app %>/components/global/styles/main.scss'],
@@ -204,8 +208,80 @@ module.exports = function (grunt) {
 				files: {
 					'<%= yeoman.app %>/index.html': [
 						'{.tmp,<%= yeoman.app %>}/{components,modules}/**/*.js',
-						'!<%= yeoman.app %>/components/environment/config.js',
-						'!<%= yeoman.app %>/components/global/config.js'
+						'!<%= yeoman.app %>/components/global/app.js',
+						'!<%= yeoman.app %>/components/global/configs.js',
+						'!<%= yeoman.app %>/components/global/runs.js',
+						'!<%= yeoman.app %>/{components,modules}/**/*.unit-spec.js',
+						'!<%= yeoman.app %>/{components,modules}/**/*.midway-spec.js'
+					]
+				}
+			},
+			// Inject script components into test configuration file
+			scriptsTest: {
+				options: {
+					transform: function(filePath){
+						filePath = filePath.replace('/app/', 'app/');
+						return '\'' + filePath + '\',';
+					},
+					starttag: '// injector:js',
+					endtag: '// endinjector'
+				},
+				files: {
+					'test/karma-shared-conf.js': [
+						'{.tmp,<%= yeoman.app %>}/{components,modules}/**/*.js',
+						'!<%= yeoman.app %>/components/global/app.js',
+						'!<%= yeoman.app %>/components/global/configs.js',
+						'!<%= yeoman.app %>/components/global/runs.js',
+						'!<%= yeoman.app %>/{components,modules}/**/*.unit-spec.js',
+						'!<%= yeoman.app %>/{components,modules}/**/*.midway-spec.js'
+					]
+				}
+			},
+			// Inject unit test components into test configuration file
+			unitTest: {
+				options: {
+					transform: function(filePath){
+						filePath = filePath.replace('/app/', 'app/');
+						return '\'' + filePath + '\',';
+					},
+					starttag: '// injector:js',
+					endtag: '// endinjector'
+				},
+				files: {
+					'test/karma-unit-conf.js': [
+						'{.tmp,<%= yeoman.app %>}/{components,modules}/**/*.unit-spec.js'
+					]
+				}
+			},
+			// Inject midway test components into test configuration file
+			midwayTest: {
+				options: {
+					transform: function(filePath){
+						filePath = filePath.replace('/app/', 'app/');
+						return '\'' + filePath + '\',';
+					},
+					starttag: '// injector:js',
+					endtag: '// endinjector'
+				},
+				files: {
+					'test/karma-midway-conf.js': [
+						'{.tmp,<%= yeoman.app %>}/{components,modules}/**/*.midway-spec.js'
+					]
+				}
+			},
+			// Inject html components into test configuration file
+			htmlTest: {
+				options: {
+					transform: function(filePath){
+						filePath = filePath.replace('/app/', 'app/');
+						return '\'' + filePath + '\',';
+					},
+					starttag: '// injector:html',
+					endtag: '// endinjector'
+				},
+				files: {
+					'test/karma-shared-conf.js': [
+						'<%= yeoman.app %>/{components,modules}/**/*.html'
 					]
 				}
 			},
@@ -455,7 +531,8 @@ module.exports = function (grunt) {
 				'ngtemplates'
 			],
 			test: [
-				'sass'
+				'sass',
+				'ngtemplates'
 			],
 			dist: [
 				'sass',
@@ -468,8 +545,30 @@ module.exports = function (grunt) {
 		// Test settings
 		karma: {
 			unit: {
-				configFile: 'test/karma.conf.js',
+				configFile: 'test/karma-unit-conf.js',
+				autoWatch: false,
 				singleRun: true
+			},
+			unit_continuous: {
+				configFile: 'test/karma-unit-conf.js'
+			},
+			midway: {
+				configFile: 'test/karma-midway-conf.js',
+				autoWatch: false,
+				singleRun: true
+			},
+			midway_continuous: {
+				configFile: 'test/karma-midway-conf.js'
+			}
+		},
+		protractor: {
+			e2e: {
+				configFile: 'test/protractor-conf.js',
+				keepAlive: false
+			},
+			e2e_continuous: {
+				configFile: 'test/protractor-conf.js',
+				keepAlive: true
 			}
 		},
 
@@ -508,16 +607,32 @@ module.exports = function (grunt) {
 		grunt.task.run(['serve:' + target]);
 	});
 
-	grunt.registerTask('test', [
+	// grunt.registerTask('test', [
+	// 	'clean:server',
+	// 	'wiredep',
+	// 	'injector:settingsSass',
+	// 	'injector:stylesSass',
+	// 	'concurrent:test',
+	// 	'injector:scripts',
+	// 	'connect:test',
+	// 	'karma'
+	// ]);
+	grunt.registerTask('pretest', [
 		'clean:server',
 		'wiredep',
 		'injector:settingsSass',
 		'injector:stylesSass',
 		'concurrent:test',
 		'injector:scripts',
-		'connect:test',
-		'karma'
+		'injector:scriptsTest',
+		'injector:unitTest',
+		'injector:midwayTest',
+		'injector:htmlTest'
 	]);
+	grunt.registerTask('test', [ 'pretest', 'connect:test', 'karma:unit', 'karma:midway', 'protractor:e2e' ]);
+	grunt.registerTask('test:unit', [ 'pretest', 'connect:test', 'karma:unit' ]);
+	grunt.registerTask('test:midway', [ 'pretest', 'connect:test', 'karma:midway' ]);
+	grunt.registerTask('test:e2e', [ 'pretest', 'connect:test', 'protractor:e2e' ]);
 
 	grunt.registerTask('build', [
 		'clean:dist',
